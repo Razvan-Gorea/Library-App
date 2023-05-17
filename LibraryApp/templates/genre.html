@@ -1,0 +1,39 @@
+<html>
+    <head>
+		<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+		<section>
+			<nav aria-label="breadcrumb">
+				<ul>
+				  <li><a href="/"><kbd>Home</kbd></a></li>
+				</ul>
+			  </nav>
+		</section>
+		<article><strong>Book by Genre<strong><br><em><ins>Page Loaded Successfully!<ins></ins></em><article>
+	</head>
+	<body >
+		<main class="container"></main>
+		<table>
+			<thead>
+			  <tr>
+				<th scope="col"><strong>Author</strong></th>
+				<th scope="col"><strong>Title</strong></th>
+				<th scope="col"><strong>Year</strong></th>
+				<th scope="col"><strong>Genre</strong></th>
+			    <th scope="col"><strong>Inventory</strong></th>
+			  </tr>
+			</thead>
+			<tbody>
+			{% for book in genres %}
+			  <tr>
+				<td>{{book.author}}</td>
+				<td>{{book.title}}</td>
+				<td>{{book.year}}</td>
+				<td>{{book.genre}}</td>
+				<td>{{book.number_in_inventory}}</td>
+			  </tr>
+			{% endfor %}
+			</tbody>
+		  </table>
+
+	</body>
+</html>

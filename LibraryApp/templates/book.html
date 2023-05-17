@@ -1,0 +1,51 @@
+<html>
+    <head>
+		<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+		<section>
+			<nav aria-label="breadcrumb">
+				<ul>
+				  <li><a href="/"><kbd>Home</kbd></a></li>
+				</ul>
+			  </nav>
+		</section>
+		<article><strong>{{ book.title }}<strong><br><em><ins>Page Loaded Successfully!<ins></ins></em><article>
+	</head>
+	<body >
+		<main class="container"></main>
+		<table>
+			<thead>
+			  <tr>
+				<th scope="col"><strong>Author</strong></th>
+				<th scope="col"><strong>Title</strong></th>
+				<th scope="col"><strong>Year</strong></th>
+				<th scope="col"><strong>Genre</strong></th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>{{ book.author }}</td>
+				<td>{{ book.title }}</td>
+				<td>{{ book.year }}</td>
+				<td>{{ book.genre }}</td>
+			  </tr>
+			</tbody>
+		  </table>
+
+
+
+          <table>
+			<thead>
+			  <tr>
+				<th scope="col"><strong>Person(s) Currently Borrowing</strong></th>
+			  </tr>
+			</thead>
+			<tbody>
+				{% for b in borrowings %}
+					{% if b.is_returned is False %}
+						<tr><td>{{ b.customer.Name }}</td></tr>
+					{% endif %}
+				{% endfor %}
+			</tbody>
+		  </table>
+	</body>
+</html>
